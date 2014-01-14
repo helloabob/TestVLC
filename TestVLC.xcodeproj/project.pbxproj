@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D62FD0518858D200071519A /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D62FD0418858D200071519A /* libstdc++.dylib */; };
+		2D62FD0718858D590071519A /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D62FD0618858D590071519A /* libbz2.dylib */; };
+		2D62FD0918858D5F0071519A /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D62FD0818858D5F0071519A /* libiconv.dylib */; };
+		2D62FD0B18858D720071519A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D62FD0A18858D720071519A /* AudioToolbox.framework */; };
+		2D62FD0E188599EC0071519A /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D62FD0D188599EC0071519A /* PlayerViewController.m */; };
 		2DCC08B71884434C00FFAF69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCC08B61884434C00FFAF69 /* Foundation.framework */; };
 		2DCC08B91884434C00FFAF69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCC08B81884434C00FFAF69 /* CoreGraphics.framework */; };
 		2DCC08BB1884434C00FFAF69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCC08BA1884434C00FFAF69 /* UIKit.framework */; };
@@ -21,6 +26,7 @@
 		2DCC08D81884434C00FFAF69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCC08BA1884434C00FFAF69 /* UIKit.framework */; };
 		2DCC08E01884434C00FFAF69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCC08DE1884434C00FFAF69 /* InfoPlist.strings */; };
 		2DCC08E21884434C00FFAF69 /* TestVLCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCC08E11884434C00FFAF69 /* TestVLCTests.m */; };
+		2DE3DE6418844D9E004DC68F /* libMobileVLCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE3DE6318844D9E004DC68F /* libMobileVLCKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D62FD0418858D200071519A /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		2D62FD0618858D590071519A /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
+		2D62FD0818858D5F0071519A /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		2D62FD0A18858D720071519A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2D62FD0C188599EC0071519A /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		2D62FD0D188599EC0071519A /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		2DCC08B31884434C00FFAF69 /* TestVLC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestVLC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCC08B61884434C00FFAF69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DCC08B81884434C00FFAF69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +65,7 @@
 		2DCC08DD1884434C00FFAF69 /* TestVLCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestVLCTests-Info.plist"; sourceTree = "<group>"; };
 		2DCC08DF1884434C00FFAF69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2DCC08E11884434C00FFAF69 /* TestVLCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVLCTests.m; sourceTree = "<group>"; };
+		2DE3DE6318844D9E004DC68F /* libMobileVLCKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobileVLCKit.a; path = TestVLC/VLCKit/libMobileVLCKit.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D62FD0B18858D720071519A /* AudioToolbox.framework in Frameworks */,
+				2D62FD0918858D5F0071519A /* libiconv.dylib in Frameworks */,
+				2D62FD0718858D590071519A /* libbz2.dylib in Frameworks */,
+				2D62FD0518858D200071519A /* libstdc++.dylib in Frameworks */,
+				2DE3DE6418844D9E004DC68F /* libMobileVLCKit.a in Frameworks */,
 				2DCC08B91884434C00FFAF69 /* CoreGraphics.framework in Frameworks */,
 				2DCC08BB1884434C00FFAF69 /* UIKit.framework in Frameworks */,
 				2DCC08B71884434C00FFAF69 /* Foundation.framework in Frameworks */,
@@ -101,6 +119,11 @@
 		2DCC08B51884434C00FFAF69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D62FD0A18858D720071519A /* AudioToolbox.framework */,
+				2D62FD0818858D5F0071519A /* libiconv.dylib */,
+				2D62FD0618858D590071519A /* libbz2.dylib */,
+				2D62FD0418858D200071519A /* libstdc++.dylib */,
+				2DE3DE6318844D9E004DC68F /* libMobileVLCKit.a */,
 				2DCC08B61884434C00FFAF69 /* Foundation.framework */,
 				2DCC08B81884434C00FFAF69 /* CoreGraphics.framework */,
 				2DCC08BA1884434C00FFAF69 /* UIKit.framework */,
@@ -112,6 +135,7 @@
 		2DCC08BC1884434C00FFAF69 /* TestVLC */ = {
 			isa = PBXGroup;
 			children = (
+				2DCC08EB1884442C00FFAF69 /* external */,
 				2DCC08C51884434C00FFAF69 /* AppDelegate.h */,
 				2DCC08C61884434C00FFAF69 /* AppDelegate.m */,
 				2DCC08C81884434C00FFAF69 /* Main.storyboard */,
@@ -119,6 +143,8 @@
 				2DCC08CC1884434C00FFAF69 /* ViewController.m */,
 				2DCC08CE1884434C00FFAF69 /* Images.xcassets */,
 				2DCC08BD1884434C00FFAF69 /* Supporting Files */,
+				2D62FD0C188599EC0071519A /* PlayerViewController.h */,
+				2D62FD0D188599EC0071519A /* PlayerViewController.m */,
 			);
 			path = TestVLC;
 			sourceTree = "<group>";
@@ -150,6 +176,13 @@
 				2DCC08DE1884434C00FFAF69 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DCC08EB1884442C00FFAF69 /* external */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = external;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCC08CD1884434C00FFAF69 /* ViewController.m in Sources */,
+				2D62FD0E188599EC0071519A /* PlayerViewController.m in Sources */,
 				2DCC08C71884434C00FFAF69 /* AppDelegate.m in Sources */,
 				2DCC08C31884434C00FFAF69 /* main.m in Sources */,
 			);
@@ -376,11 +410,20 @@
 		2DCC08E61884434C00FFAF69 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestVLC/TestVLC-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/TestVLC/vlc/include",
+					"$(SRCROOT)/TestVLC/VLCKit/include/**",
+				);
 				INFOPLIST_FILE = "TestVLC/TestVLC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = /Users/wangbo/Work/projs/TestVLC/TestVLC/VLCKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -389,11 +432,21 @@
 		2DCC08E71884434C00FFAF69 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestVLC/TestVLC-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/TestVLC/vlc/include",
+					"$(SRCROOT)/TestVLC/VLCKit/include/**",
+				);
 				INFOPLIST_FILE = "TestVLC/TestVLC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = /Users/wangbo/Work/projs/TestVLC/TestVLC/VLCKit;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,6 +513,7 @@
 				2DCC08E71884434C00FFAF69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DCC08E81884434C00FFAF69 /* Build configuration list for PBXNativeTarget "TestVLCTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +522,7 @@
 				2DCC08EA1884434C00FFAF69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
