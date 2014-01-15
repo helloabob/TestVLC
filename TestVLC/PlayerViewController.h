@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayerViewController : UIViewController
+#import "TopBarView.h"
+
+@interface PlayerViewController : UIViewController<TopBarViewDelegate>
 
 @property (nonatomic, strong) NSString *URL;
 

@@ -27,6 +27,8 @@
 		2DCC08E01884434C00FFAF69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCC08DE1884434C00FFAF69 /* InfoPlist.strings */; };
 		2DCC08E21884434C00FFAF69 /* TestVLCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCC08E11884434C00FFAF69 /* TestVLCTests.m */; };
 		2DE3DE6418844D9E004DC68F /* libMobileVLCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE3DE6318844D9E004DC68F /* libMobileVLCKit.a */; };
+		5AFA145F18861D2A006B794D /* TopBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFA145E18861D2A006B794D /* TopBarView.m */; };
+		5AFA146218861D38006B794D /* BottomBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFA146118861D38006B794D /* BottomBarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		2DCC08DF1884434C00FFAF69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2DCC08E11884434C00FFAF69 /* TestVLCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVLCTests.m; sourceTree = "<group>"; };
 		2DE3DE6318844D9E004DC68F /* libMobileVLCKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobileVLCKit.a; path = TestVLC/VLCKit/libMobileVLCKit.a; sourceTree = "<group>"; };
+		5AFA145D18861D2A006B794D /* TopBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopBarView.h; sourceTree = "<group>"; };
+		5AFA145E18861D2A006B794D /* TopBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopBarView.m; sourceTree = "<group>"; };
+		5AFA146018861D38006B794D /* BottomBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomBarView.h; sourceTree = "<group>"; };
+		5AFA146118861D38006B794D /* BottomBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomBarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 		2DCC08BC1884434C00FFAF69 /* TestVLC */ = {
 			isa = PBXGroup;
 			children = (
+				5AFA145C18861D06006B794D /* Views */,
 				2DCC08EB1884442C00FFAF69 /* external */,
 				2DCC08C51884434C00FFAF69 /* AppDelegate.h */,
 				2DCC08C61884434C00FFAF69 /* AppDelegate.m */,
@@ -183,6 +190,17 @@
 			children = (
 			);
 			name = external;
+			sourceTree = "<group>";
+		};
+		5AFA145C18861D06006B794D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5AFA145D18861D2A006B794D /* TopBarView.h */,
+				5AFA145E18861D2A006B794D /* TopBarView.m */,
+				5AFA146018861D38006B794D /* BottomBarView.h */,
+				5AFA146118861D38006B794D /* BottomBarView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +303,9 @@
 				2DCC08CD1884434C00FFAF69 /* ViewController.m in Sources */,
 				2D62FD0E188599EC0071519A /* PlayerViewController.m in Sources */,
 				2DCC08C71884434C00FFAF69 /* AppDelegate.m in Sources */,
+				5AFA145F18861D2A006B794D /* TopBarView.m in Sources */,
 				2DCC08C31884434C00FFAF69 /* main.m in Sources */,
+				5AFA146218861D38006B794D /* BottomBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +442,8 @@
 					"$(SRCROOT)/TestVLC/VLCKit/include/**",
 				);
 				INFOPLIST_FILE = "TestVLC/TestVLC-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = /Users/wangbo/Work/projs/TestVLC/TestVLC/VLCKit;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../vlc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -444,8 +464,8 @@
 					"$(SRCROOT)/TestVLC/VLCKit/include/**",
 				);
 				INFOPLIST_FILE = "TestVLC/TestVLC-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = /Users/wangbo/Work/projs/TestVLC/TestVLC/VLCKit;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../vlc";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

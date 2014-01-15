@@ -17,7 +17,7 @@
 @property(nonatomic, strong) UIView *movieView;
 @property(nonatomic, strong) VLCMediaListPlayer *listPlayer;
 @property(nonatomic, strong) VLCMediaPlayer *mediaPlayer;
-@property (nonatomic, strong) UIView *viewTopBar;
+@property (nonatomic, strong) TopBarView *viewTopBar;
 
 @end
 
@@ -30,11 +30,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    [UIApplication sharedApplication].statusBarHidden = YES;
 }
 
 - (void)viewDidLoad
@@ -71,11 +66,14 @@
     
     
     
-    _viewTopBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-    _viewTopBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    _viewTopBar.backgroundColor = [UIColor blackColor];
-    _viewTopBar.alpha = 0.7f;
+    _viewTopBar = [[TopBarView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    _viewTopBar.title = @"直播频道";
+    _viewTopBar.delegate = self;
     [self.view addSubview:_viewTopBar];
+}
+
+- (void)viewDidClose {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)tapped:(UIGestureRecognizer *)gesture {

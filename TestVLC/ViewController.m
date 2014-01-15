@@ -12,6 +12,8 @@
 
 
 
+
+
 @interface ViewController ()
 
 @property (retain, nonatomic) IBOutlet UITextField *txtURL;
@@ -37,7 +39,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.txtURL.delegate = self;
     [self.btnPlay setBackgroundColor:[UIColor lightGrayColor]];
     [self.btnPlay addTarget:self action:@selector(btnPlayTapped:) forControlEvents:UIControlEventTouchUpInside];
