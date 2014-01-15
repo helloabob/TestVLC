@@ -10,7 +10,9 @@
 
 #import "TopBarView.h"
 
-@interface PlayerViewController : UIViewController<TopBarViewDelegate>
+#import "VLCMediaPlayer.h"
+
+@interface PlayerViewController : UIViewController<TopBarViewDelegate,VLCMediaPlayerDelegate>
 
 @property (nonatomic, strong) NSString *URL;
 

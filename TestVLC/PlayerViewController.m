@@ -8,20 +8,33 @@
 
 #import "PlayerViewController.h"
 
-#import "VLCMediaPlayer.h"
+
 
 #import "VLCMediaListPlayer.h"
 
 @interface PlayerViewController ()
 
-@property(nonatomic, strong) UIView *movieView;
-@property(nonatomic, strong) VLCMediaListPlayer *listPlayer;
-@property(nonatomic, strong) VLCMediaPlayer *mediaPlayer;
+@property (nonatomic, strong) UIView *movieView;
+@property (nonatomic, strong) VLCMediaListPlayer *listPlayer;
+@property (nonatomic, strong) VLCMediaPlayer *mediaPlayer;
 @property (nonatomic, strong) TopBarView *viewTopBar;
+
+@property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
 
 @end
 
 @implementation PlayerViewController
+
+- (void)dealloc {
+    _mediaPlayer.delegate = nil;
+    _mediaPlayer.drawable = nil;
+    [_listPlayer release];
+    [_URL release];
+    [_movieView release];
+    [_viewTopBar release];
+    [_indicatorView release];
+    [super dealloc];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +56,11 @@
     [self.view addGestureRecognizer:tap];
     [tap release];
     
+    _indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    _indicatorView.center = self.view.center;
+    _indicatorView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin;
+    [self.view addSubview:_indicatorView];
+    [_indicatorView startAnimating];
     
     
     if (self.URL) {
@@ -84,6 +102,35 @@
     }
 }
 
+
+/**
+ * Sent by the default notification center whenever the player's state has changed.
+ * \details Discussion The value of aNotification is always an VLCMediaPlayerStateChanged notification. You can retrieve
+ * the VLCMediaPlayer object in question by sending object to aNotification.
+ */
+- (void)mediaPlayerStateChanged:(NSNotification *)aNotification {
+    VLCMediaPlayerState currentState = _mediaPlayer.state;
+    if (currentState == VLCMediaPlayerStateBuffering) {
+        NSLog(@"=============buffering===============");
+    } else if (currentState == VLCMediaPlayerStatePlaying) {
+        NSLog(@"=============playing===============");
+    } else {
+        NSLog(@"=============others===============");
+    }
+}
+/**
+ * Sent by the default notification center whenever the player's time has changed.
+ * \details Discussion The value of aNotification is always an VLCMediaPlayerTimeChanged notification. You can retrieve
+ * the VLCMediaPlayer object in question by sending object to aNotification.
+ */
+- (void)mediaPlayerTimeChanged:(NSNotification *)aNotification {
+    if (_mediaPlayer.time.intValue > 0) {
+        [_indicatorView stopAnimating];
+        [_indicatorView removeFromSuperview];
+    }
+//    NSLog(@"timeChanged:%d", _mediaPlayer.time.intValue);
+}
+
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
@@ -95,9 +142,6 @@
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
 }
-
-
-
 
 - (void)didReceiveMemoryWarning
 {

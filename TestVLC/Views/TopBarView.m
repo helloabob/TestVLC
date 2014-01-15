@@ -31,17 +31,24 @@
     if (self) {
         // Initialization code
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        self.backgroundColor = [UIColor clearColor];
+        
+//        UIView *viewBack = [[[UIView alloc] initWithFrame:self.bounds] autorelease];
+//        viewBack.backgroundColor = [UIColor blackColor];
+//        viewBack.alpha = 0.5f;
+//        viewBack.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//        [self addSubview:viewBack];
         
         UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(20, 10, 60, 30)];
-        [btnBack setBackgroundColor:[UIColor blueColor]];
-        [btnBack setTitle:@"返回" forState:UIControlStateNormal];
+//        [btnBack setBackgroundColor:[UIColor blueColor]];
+        [btnBack setTitle:@"完成" forState:UIControlStateNormal];
         [btnBack addTarget:self action:@selector(btnBackTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btnBack];
         [btnBack release];
         
         _lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, self.bounds.size.height)];
         _lblTitle.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+        _lblTitle.textColor = [UIColor whiteColor];
         _lblTitle.center = self.center;
         [self addSubview:_lblTitle];
         [_lblTitle release];
@@ -63,7 +70,7 @@
     // Drawing code
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(ctx, [[UIColor blackColor] CGColor]);
-    CGContextSetAlpha(ctx, 0.6f);
+    CGContextSetAlpha(ctx, 0.4f);
     CGContextFillRect(ctx, self.bounds);
     
     
